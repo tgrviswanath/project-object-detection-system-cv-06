@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.env
+cv-service/models/
+cv-service/data/
+node_modules/
+frontend/build/
+.DS_Store
+*.log
