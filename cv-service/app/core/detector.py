@@ -16,8 +16,11 @@ _model = None
 def _get_model():
     global _model
     if _model is None:
-        from ultralytics import YOLO
-        _model = YOLO(settings.YOLO_MODEL)
+        try:
+            from ultralytics import YOLO
+            _model = YOLO(settings.YOLO_MODEL)
+        except Exception as e:
+            raise FileNotFoundError(f"Object detection model unavailable: {e}")
     return _model
 
 
